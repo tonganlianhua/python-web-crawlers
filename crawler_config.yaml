@@ -1,0 +1,122 @@
+# 爬虫配置文件示例
+# 用于crawler_10.py - 高级通用爬虫框架
+
+sites:
+  example_news:
+    name: "示例新闻网站"
+    base_url: "https://news.example.com"
+    crawl_method: "html"
+    search_url: "/search"
+    pagination_param: "page"
+    items_per_page: 20
+    request_delay: 1.0
+    headers:
+      Referer: "https://news.example.com"
+    fields:
+      - name: "title"
+        selector: ".article-title"
+        data_type: "text"
+        required: true
+      - name: "url"
+        selector: ".article-title a"
+        data_type: "url"
+        required: true
+        attributes: ["href"]
+      - name: "summary"
+        selector: ".article-summary"
+        data_type: "text"
+      - name: "date"
+        selector: ".article-date"
+        data_type: "date"
+        regex: "(\d{4}-\d{2}-\d{2})"
+      - name: "author"
+        selector: ".article-author"
+        data_type: "text"
+      - name: "category"
+        selector: ".article-category"
+        data_type: "text"
+
+  example_products:
+    name: "示例产品网站"
+    base_url: "https://products.example.com"
+    crawl_method: "html"
+    search_url: "/search"
+    pagination_param: "p"
+    items_per_page: 30
+    request_delay: 2.0
+    fields:
+      - name: "name"
+        selector: ".product-name"
+        data_type: "text"
+        required: true
+      - name: "url"
+        selector: ".product-link"
+        data_type: "url"
+        required: true
+        attributes: ["href"]
+      - name: "price"
+        selector: ".product-price"
+        data_type: "number"
+      - name: "image"
+        selector: ".product-image img"
+        data_type: "url"
+        attributes: ["src"]
+      - name: "description"
+        selector: ".product-description"
+        data_type: "text"
+      - name: "rating"
+        selector: ".product-rating"
+        data_type: "number"
+
+  example_api:
+    name: "示例API服务"
+    base_url: "https://api.example.com/v1/items?page={page}"
+    crawl_method: "api"
+    items_per_page: 50
+    request_delay: 0.5
+    headers:
+      Authorization: "Bearer YOUR_API_KEY"
+    fields:
+      - name: "id"
+        selector: "id"
+        data_type: "text"
+        required: true
+      - name: "name"
+        selector: "name"
+        data_type: "text"
+        required: true
+      - name: "price"
+        selector: "price"
+        data_type: "number"
+      - name: "category"
+        selector: "category.name"
+        data_type: "text"
+      - name: "created_at"
+        selector: "created_at"
+        data_type: "date"
+      - name: "updated_at"
+        selector: "updated_at"
+        data_type: "date"
+
+# 通用配置
+general:
+  max_retries: 3
+  timeout: 30
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  default_delay: 1.0
+  proxy_enabled: false
+  proxy_url: "http://proxy.example.com:8080"
+
+# 数据导出配置
+export:
+  default_format: "json"
+  csv_delimiter: ","
+  csv_encoding: "utf-8-sig"
+  json_indent: 2
+
+# 数据库配置
+database:
+  enabled: true
+  path: "crawler_data.db"
+  backup_enabled: true
+  backup_dir: "backups"
