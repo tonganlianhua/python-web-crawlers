@@ -1,6 +1,14 @@
-# 专业Python爬虫程序集
+# 🐍 Python Web Crawlers
 
-## 概述
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
+![爬虫数量](https://img.shields.io/badge/爬虫-50个-green)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/tonganlianhua/python-web-crawlers/ci.yml)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-在线-blueviolet)
+![Docker](https://img.shields.io/badge/docker-可用-2496ED)
+![Code Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+
+## 📚 概述
 
 本目录包含10个专业的Python爬虫程序，覆盖不同的网站和数据类型，每个爬虫都有完整的功能、错误处理和详细注释。
 

@@ -1,0 +1,80 @@
+# GitHub Pages 配置
+title: "Python Web Crawlers"
+description: "50个专业Python爬虫程序集合"
+baseurl: "/python-web-crawlers"
+url: "https://tonganlianhua.github.io"
+
+# 主题设置
+theme: jekyll-theme-cayman
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 作者信息
+author:
+  name: "tonganlianhua"
+  email: "amoyeah@163.com"
+  github: "tonganlianhua"
+
+# SEO设置
+seo:
+  title: "Python Web Crawlers - 50个专业爬虫程序"
+  description: "包含50个专业Python爬虫程序的集合，覆盖新闻、电商、社交、金融、娱乐等所有主流领域"
+  keywords: "python,爬虫,web scraping,数据采集,数据挖掘"
+
+# 导航
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "爬虫列表"
+    url: "/crawlers/"
+  - title: "使用指南"
+    url: "/guide/"
+  - title: "API文档"
+    url: "/api/"
+  - title: "GitHub"
+    url: "https://github.com/tonganlianhua/python-web-crawlers"
+
+# 社交链接
+social:
+  github: "tonganlianhua"
+  email: "amoyeah@163.com"
+
+# 构建排除
+exclude:
+  - "node_modules/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "vendor/"
+  - "*.log"
+  - "*.tmp"
+  - ".git/"
+  - ".github/"
+
+# 包含文件
+include:
+  - "_pages"
+  - "*.md"
+  - "*.html"
+  - "*.css"
+  - "*.js"
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "page"
